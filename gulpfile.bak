@@ -1,0 +1,141 @@
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const browserSync = require('browser-sync')
+const htmlmin  = require('gulp-htmlmin')
+const plumber  = require('gulp-plumber')
+const prefix = require('gulp-autoprefixer')
+const sourcemaps = require('gulp-sourcemaps')
+const babel = require('gulp-babel')
+
+// Error handler
+const onError = function(error) {
+  notifier.notify({
+    'title': 'Error',
+    'message': 'Compilation failure.'
+  })
+
+  console.log(error)
+  this.emit('end')
+}
+
+// Clean dist
+gulp.task('clean', () => del('dist'))
+
+// HTML
+gulp.task('html', () => {
+  return gulp.src('src/*.html')
+    .pipe(plumber({ errorHandler: onError }))
+    // .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    .pipe(gulp.dest('dist/'))
+})
+
+// Sass
+gulp.task('sass', () => {
+  return gulp.src('src/assets/scss/main.scss')
+  .pipe(plumber({ errorHandler: onError }))
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({includePaths: ['scss']}))
+    .pipe(prefix(['last 15 versions', '> 1%'], { cascade: true }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/assets/css'))
+})
+
+// JavaScript
+gulp.task('js', () =>
+  gulp.src('src/assets/js/main.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(gulp.dest('dist/assets/js'))
+);
+
+// Images
+gulp.task('browser-sync', () => {
+  return browserSync.init(["src/*.html", "css/*.css", "js/*.js"], {
+    server: {
+      baseDir: "./dist"
+    }
+  })
+})
+
+// Fonts and videos
+const others = [
+  {
+    name: 'fonts',
+    src:  'src/assets/fonts/**/*.{woff,woff2}',
+    dest: '/assets/fonts'
+  }, {
+    name: 'videos',
+    src:  'src/assets/videos/**/*',
+    dest: '/assets/videos'
+  }
+]
+
+others.forEach(object => {
+  gulp.task(object.name, () => {
+    return gulp.src('src' + object.src)
+      .pipe(plumber({ errorHandler: onError }))
+      .pipe(gulp.dest('dist' + object.dest))
+  })
+})
+
+// gulp.task('default', ['html', 'sass', 'js', 'browser-sync'], () => {
+//   gulp.watch("src/*.html", ['html'])
+//   gulp.watch("src/assets/scss/*.scss", ['sass'])
+//   gulp.watch('src/assets/js/*.js', ['js'])
+// })
+
+// server
+
+const server = sync.create()
+const reload = sync.reload
+
+const sendMaps = (req, res, next) => {
+  const filename = req.url.split('/').pop()
+  const extension = filename.split('.').pop()
+
+  if(extension === 'css' || extension === 'js') {
+    res.setHeader('X-SourceMap', '/maps/' + filename + '.map')
+  }
+
+  return next()
+}
+
+const options = {
+  notify: false,
+  server: {
+    baseDir: 'dist',
+    middleware: [
+      sendMaps
+    ]
+  },
+  watchOptions: {
+    ignored: '*.map'
+  }
+}
+
+gulp.task('server', () => sync(options))
+
+// watch
+
+gulp.task('watch', () => {
+  gulp.watch('src/html/**/*.html', ['html', reload])
+  gulp.watch('src/sass/**/*.scss', ['sass', reload])
+  gulp.watch('src/js/**/*.js', ['js', reload])
+  gulp.watch('src/images/**/*.{gif,jpg,png,svg}', ['images', reload])
+})
+
+// build and default tasks
+
+gulp.task('build', ['clean'], () => {
+  // create dist directories
+  fs.mkdirSync('dist')
+  fs.mkdirSync('dist/maps')
+
+  // run the tasks
+  gulp.start('html', 'sass', 'js', 'images', 'fonts', 'videos', 'favicon')
+})
+
+gulp.task('default', ['build', 'server', 'watch'])

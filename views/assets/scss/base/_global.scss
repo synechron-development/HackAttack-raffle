@@ -1,0 +1,26 @@
+html {
+  font-size: 16px;
+
+  // Fluid REM-unit font scaling
+  // @media (max-width: 1000px) {
+  //   font-size: calc(12px + .4vw);
+  // }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $sans-serif;
+
+  // Responsive breakpoint test //////
+  position: relative;
+
+  ////////////////////////////////////
+}
+
+a {
+  @include transition(all 0.3s ease-in-out);
+  &:hover {
+    text-decoration: none;
+  }
+}

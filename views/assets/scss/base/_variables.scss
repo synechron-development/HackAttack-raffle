@@ -1,0 +1,57 @@
+//============================================================
+// Colours
+//============================================================
+
+$blue: blue;
+$green: green;
+$red: red;
+
+// HackAttack colors
+$black:             #1D1D1D;
+$white:             #FFFFFF;
+$backround-white:   #F6F7F8;
+$form-gray:         #3C3C3C;
+$text-gray:         #BBBBBB;
+$placeholder-gray:  #4A4A4A;
+$yellow:            #FBE100;
+
+
+// Add colour swatches to meaningful variables
+$body-bg: $white;
+$body-text-color: $black;
+
+$info-color: $blue;
+$success-color: $green;
+$warning-color: $yellow;
+$danger-color: $red;
+
+//============================================================
+// Typography
+//============================================================
+$system-font-stack: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$sans-serif: $system-font-stack;
+$serif: serif;
+
+$heading-font: $sans-serif;
+$body-font: $serif;
+
+//============================================================
+// Responsive Breakpoints
+//============================================================
+
+// Screensizes
+$phone: 575px;
+$tablet: 768px;
+$small-desktop: 991px;
+$desktop: 1200px;
+
+// A map of breakpoints.
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+);
+
+// Import Font kits
+@import url("https://use.typekit.net/zhl5duo.css");

@@ -1,0 +1,53 @@
+{
+  "name": "html-css-template",
+  "version": "1.0.0",
+  "description": "Basic front-end boilerplate",
+  "main": "server.js",
+  "engines": {
+    "node": "8.11.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "rollup": "^0.63.4",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-filesize": "^4.0.1",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^4.0.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "nodemailer": "^4.6.8"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-plumber": "^1.2.0",
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synechron-development/html-css-template.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "boilerplate"
+  ],
+  "author": "Synechron Front-End Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synechron-development/html-css-template/issues"
+  },
+  "homepage": "https://github.com/synechron-development/html-css-template#readme"
+}

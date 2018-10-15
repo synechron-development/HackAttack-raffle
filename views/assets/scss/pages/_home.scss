@@ -1,0 +1,521 @@
+* {
+    outline: none;
+}
+
+#hack-attack-page {
+  background: $backround-white;
+
+
+
+
+    .container {
+        background: $black;
+        padding: 30px 25px;
+        padding-bottom: 50px;
+        font-family: "fira-mono";
+        max-width: 100%;
+        position: relative;
+
+        .copy {
+            .title {
+                font-size: 40px;
+                color: $white;
+                font-weight: bold;
+                margin-top: 31px;
+                width: 90%;
+            }
+        }
+
+        .welcome-container {
+            height: auto;
+            width: 100%;
+            position: relative;
+
+            form {
+                margin-bottom: 0;
+            }
+
+            .header-container {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .question-text {
+                font-size: 18px;
+                color: $text-gray;
+                font-weight: normal;
+            }
+
+            .qa-box {
+                margin-top: 30px;
+
+                .answer-area {
+                    margin-top: 58px;
+                    // border: 1px solid blue;
+                    height: 400px;
+                }
+            }
+
+            .form-container {
+                width: 100%;
+                height: auto;
+                background: $form-gray;
+                margin-top: 42px;
+                padding: 25px 20px;
+                padding-bottom: 0;
+
+                .bla {
+                    margin-left: 0;
+                    max-width: 100%;
+                }
+
+                .hide-this{
+                  display: none;
+                }
+
+                .question-text {
+                    color: $white;
+                }
+
+                .name-label {
+                    position: absolute;
+                    top: 8px;
+                    left: 0;
+                    @include transition(0.2s ease-out all);
+                    color: rgba($white, 1);
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                    font-family: "work-sans";
+                    transform: translateY(-25px) !important;
+                    font-size: 13px !important;
+                    color: $yellow !important;
+                }
+
+                .input-box {
+                    width: 100%;
+                    border: 0px;
+                    border-bottom: 1px solid $white;
+                    background: rgba(white, 0);
+                    outline: none;
+                    height: 38px;
+                    overflow: visible;
+                    margin-bottom: 5px;
+                    letter-spacing: 2px;
+                    font-family: "work-sans";
+                    font-size: 16px;
+                    color: $white;
+
+                    &:focus{
+                        ~.name-label{
+                            transform: translateY(-25px);
+                            font-size: 13px;
+                            color: $yellow !important;
+                            font-family: "work-sans";
+                        }
+                    }
+                    &:valid{
+                        ~.name-label{
+                            transform: translateY(-25px);
+                            font-size: 13px;
+                            color: $yellow !important;
+                            font-family: "work-sans";
+                        }
+                    }
+                }
+
+                form .form-group {
+                    margin-top: 20px;
+                    margin-bottom: 0;
+                    padding: 0;
+                    position: relative;
+                    width: 100%;
+                    min-height: 1px;
+
+                    .selectric {
+                        width: 100%;
+
+                        .label {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .copy {
+                        justify-content: center;
+                    }
+
+                    &.answer-container {
+                      position: absolute;
+                      top: -513px;
+                      .answer-text {
+                          background: $black;
+                          border: 0;
+                          width: 100%;
+                          height: 400px;
+                          color: $white;
+                          font-family: "work-sans";
+                          font-size: 16px;
+                          font-weight: 700;
+                          padding-left: 15px;
+                          overflow: auto;
+                          caret-color: $yellow;
+                          border: 1px solid #727272;
+                      }
+
+                      @media(min-width: $small-desktop) {
+                          top: 100px;
+                          right: 670px;
+
+                          .answer-text {
+                            width: 600px;
+                          }
+                      }
+
+                      @media(min-width: 1050px) {
+                        right: 800px
+                      }
+                    }
+                }
+
+                .with-errors {
+                    margin-top: 5px;
+
+                    ul li {
+                        font-size: 12px;
+                        color: #FB948C;
+                    }
+                }
+
+                .button-container {
+                    position: relative;
+                    width: 100%;
+
+                    .button {
+                        margin-top: 30px;
+                        width: calc(100% + 40px);
+                        margin-left: calc(-20px);
+                        margin-right: calc(-20px);
+                        padding-top: 0;
+
+                        &:hover {
+                          cursor: pointer;
+                        }
+                    }
+
+                }
+
+
+                .radio-group {
+
+
+                    .radio {
+                        margin-top: 14px;
+                        width: 100px;
+                    }
+
+                    .radio-btn-group {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    label.radio {
+                        cursor: pointer;
+                        width: 32%;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                      }
+                      label.radio input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        visibility: hidden;
+                        pointer-events: none;
+
+                      }
+                      label.radio span {
+                        padding-top: 3px;
+                        width: 100%;
+                        color: $white;
+                        border-radius: 3px;
+                        height: 36px;
+                        display: flex;
+                        justify-content: center;
+                        border: 2px solid $white;
+                        opacity: 0.5;
+                        font-size: 18px;
+                        font-family: "work-sans";
+                      }
+                      label.radio input:checked + span {
+                        border-color: $yellow;
+                        color: $yellow;
+                        opacity: 1;
+                      }
+                }
+
+                .status-msg {
+                    display: none;
+                    background: $form-gray;
+                    height: 600px;
+                    position: relative;
+                    // width: 100%;
+                    // height: 100%;
+                    // left: 0;
+                    // top: 0;
+
+                    overflow: hidden;
+
+
+                    .succes-msg-text {
+                        font-size: 24px;
+                        color: $white;
+                        font-family: "fira-mono";
+                        margin-top: 63px;
+                        margin-bottom: 0;
+                    }
+
+                    .name-label {
+                        position: relative;
+                        margin-top: 50px;
+                        margin-bottom: 0;
+                        top: 16px;
+                    }
+
+                    .luck-text {
+                        font-family: "work-sans";
+                        font-size: 16px;
+                        color: $white;
+                        opacity: 0.8;
+                    }
+
+                    .visit-link {
+                        font-family: "work-sans";
+                        font-size: 18px;
+                        color: $white;
+                    }
+
+                    .ipad-img-box {
+                        height: 402px;
+                        width: 236px;
+                        position: absolute;
+                        left: 50%;
+                        transform: rotate(14deg) translate(-50%);
+                        margin-top: 210px;
+
+
+
+                        .img-box {
+                            overflow: hidden;
+                            width: 84%;
+
+                        }
+                    }
+                }
+
+                @media(min-width: $small-desktop) {
+                  width: 326px;
+                  height: auto;
+
+                  position: absolute;
+                  right: 0;
+                  top: 110px;
+                  z-index: 10;
+
+                  .button {
+                    width: calc(100% + 88px);
+                    margin-left: calc(-44px);
+                    margin-right: calc(-44px);
+                  }
+                }
+
+            }
+
+            @media(min-width: $small-desktop) {
+              // border: 1px solid red;
+              width: 100%;
+              max-width: 1110px;
+              margin: 0 auto;
+
+              .copy {
+                h1 {
+                  max-width: 510px;
+                }
+              }
+
+              .qa-box {
+                .answer-area {
+                  // border: 1px solid red;
+                  width: 600px;
+                  height: 400px;
+                }
+              }
+            }
+        }
+
+
+
+        .about-container {
+            background: $backround-white;
+
+            .copy {
+
+              .title {
+                  color: $placeholder-gray;
+                  margin-bottom: 0;
+                  margin-top: 50px;
+              }
+
+              .top-copy {
+
+                @media (min-width: $small-desktop) {
+                  display: flex;
+                  justify-content: space-between;
+                  // border: 1px solid red;
+                  margin-top: 60px;
+
+                  padding-bottom: 60px;
+                  border-bottom: 1px solid #BBBBBB;
+
+                  .left-column {
+
+                  }
+
+                  .right-column {
+                    width: 554px;
+                    margin-top: 90px;
+                    padding-left: 20px;
+                  }
+                }
+
+                .img-box {
+                    width: calc(100% + 50px);
+                    margin-left: calc(-25px);
+                    margin-right: calc(-25px);
+                    height: auto;
+                    margin-top: 40px;
+
+                    @media(min-width: $tablet) {
+                      width: 600px;
+                      margin: 30px 0 0 0 ;
+                      height: auto;
+                    }
+
+                    @media(min-width: $tablet) {
+                      width: 448px;
+                    }
+                }
+
+                .plain-text--fira {
+                    color: $placeholder-gray;
+                    margin-top: 30px;
+                    font-size: 18px;
+                    margin-bottom: 0;
+                }
+
+                .plain-text--sans {
+                    color: $placeholder-gray;
+                    margin-top: 30px;
+                    font-size: 18px;
+                    font-family: "work-sans";
+                    margin-bottom: 0;
+                }
+
+                .hide-for-mobile {
+                  display: none;
+                  @media (min-width: $small-desktop) {
+                    display: block;
+                  }
+                }
+
+                .hide-for-desktop {
+                  display: block;
+                  @media (min-width: $small-desktop) {
+                    display: block;
+                    display: none;
+                  }
+                }
+              }
+
+              .bottom-copy {
+
+                @media (min-width: $small-desktop) {
+                  display: flex;
+                  padding-top: 50px;
+
+                  h1 {
+                    width: 350px;
+                  }
+
+                  .right-column {
+                    margin-left: 206px;
+
+                    .bullet-list {
+                        margin-top: 52px;
+                    }
+                  }
+
+                }
+
+                .bullet-list {
+                    list-style: none;
+                    padding: 0;
+                    margin-top: 30px;
+                    margin-bottom: 0;
+                    margin-left: 20px;
+
+                    &--item {
+                        line-height: 28px;
+
+                    }
+                }
+
+                .more-btn-box {
+                    text-align: center;
+                    margin-top: 40px;
+                    margin-left: 20px;
+
+                    a {
+                      max-width: 326px;
+                      width: 100%;
+                      &:hover {
+                        color: $black;
+                        text-decoration: none;
+                      }
+                    }
+                }
+              }
+
+            }
+
+            @media (min-width: $small-desktop) {
+              width: 100%;
+              max-width: 1110px;
+              margin: 0 auto;
+            }
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 1140px;
+            margin: 0 auto;
+
+            .plain-text--sans {
+                font-size: 14px;
+                color: $text-gray;
+                font-family: "work-sans";
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .backround--white {
+        background: $backround-white;
+        padding-top: 0;
+        padding-bottom: 50px;
+
+        @media (min-width: $small-desktop) {
+            padding-bottom: 105px;
+        }
+    }
+}

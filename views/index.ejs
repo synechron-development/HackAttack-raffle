@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>HackAttack</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+</head>
+<body>
+  <div id="hack-attack-page">
+    <div class="container">
+      <div class="welcome-container">
+        <div class="header-container">
+          <div class="logo-box">
+            <img src="./assets/images/synechron-logo.png" alt="">
+          </div>
+          <div class="win-ipad-box">
+            <img src="./assets/images/win-ipad.png" alt="">
+          </div>
+        </div>
+        <div class="copy">
+          <h1 class="title">Welcome to the Synechron HackAttack;</h1>
+        </div>
+        <div class="qa-box">
+          <h2 class="question-text">Some coding question goes here for you to answer?</h2>
+          <div class="answer-area">
+          </div>
+        </div>
+        <div class="form-container">
+          <!-- ------------------------------------------------------------------------>
+          <div class="col-md-10 offset-md-1 hide-onSubmit bla">
+            <form  action="/send-email" method="post" id="AplicantForm" class="row  arrabic-form" name="applicantForm" data-toggle="validator">
+                <div class="copy">
+                  <h2 class="question-text">Enter you personal details and submit for your chance to win!</h2>
+                </div>
+                <div class="form-group answer-container">
+                  <textarea class="answer-text" placeholder="Type your answer" maxlength="300" required name="answer" id="answer-box"></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="input-box" placeholder="Agent Smith" required pattern="^[a-zA-Z '\\-_\\.\\s]{3,50}" maxlength="50" data-error="Please enter valid full name" name="fullname">
+                  <label for="fullname" class="name-label">Full Name</label>
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="input-box" placeholder="smith@gmail.com" required maxlength="50" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" data-error="Please enter valid email" name="email">
+                  <label for="email" class="name-label">Email</label>
+                  <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="input-box" placeholder="+7xxxxxxxxx" required pattern="^((\+7|7|8)+([0-9]){10})$" data-error="Please enter valid phone number" name="phoneNumber" maxlength="12">
+                  <label for="phoneNumber" class="name-label">Phone Number</label>
+                  <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="input-box" placeholder="E.g. Java, JavaScript" required="" data-error="Please enter your tech stack" name="techStack" maxlength="70">
+                  <label for="techStack" class="name-label">Your Tech Stack</label>
+                  <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group radio-group">
+                  <div class="radio-btn-group">
+                    <label class="radio">
+                      <input type="radio" name="experience" value="Junior" required>
+                      <span>Junior</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="experience" value="Mid" required>
+                      <span>Mid</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="experience" value="Senior" required>
+                        <span>Senior</span>
+                      </label>
+                  <label for="experience" class="name-label">Experience Level</label>
+                  </div>
+
+                  <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="button-container">
+                  <div class="cta-holder text-center">
+                    <button type="submit" data-popup="#apply-msg" data-wait="Please wait" class="button submit" name="button">Submit</button>
+                  </div>
+                </div>
+            </form>
+          </div>
+
+          <div class="status-msg" id="apply-msg">
+            <div class="inner-frame">
+              <div class="cell top">
+                <h1 class="succes-msg-text" >Thank you!</h1>
+                <h3 class="name-label">Your answer has been submitted</h3>
+                <h2 class="luck-text">Are you interested in joining Synechron?</h2>
+                <h2 class="luck-text">We are hiring for Java developers.</h2>
+                <a href="https://vk.com/public172345509" target="_blank" class="visit-link">Visit our VK profile</a>
+                <div class="ipad-img-box">
+                  <img class="img-box" src="./assets/images/ipad.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ------------------------------------------------------------------------>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container backround--white">
+      <div class="about-container">
+
+          <div class="copy">
+
+            <div class="top-copy">
+
+              <div class="left-column">
+                <h1 class="title">About Synechron</h1>
+                <p class="plain-text--fira hide-for-desktop"> One of the fastest-growing digital, business consulting & technology services providers, is a $500 million firm based in New York.
+                </p>
+                <img class="img-box" src="./assets/images/syne-office.png" alt="">
+              </div>
+
+              <div class="right-column">
+                <p class="plain-text--fira hide-for-mobile"> One of the fastest-growing digital, business consulting & technology services providers, is a $500 million firm based in New York.
+                </p>
+
+                <p class="plain-text--sans">Since inception in 2001, Synechron has been on a steep growth trajectory. With 8,000+ professionals operating in 18 countries across the world, it has presence across USA, Canada, UK, France, The Netherlands, Switzerland, Luxembourg, Serbia, Hungary, Germany, Italy, UAE, Singapore, Hong Kong, Philippines, Japan, Australia and Development Centers in India.
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom-copy">
+              <h1 class="title">Roles we’re hiring for</h1>
+
+              <div class="right-column">
+                <ul class="bullet-list">
+                  <li class="bullet-list--item">– Java Full Stack Developer</li>
+                  <li class="bullet-list--item">– Scala Developer</li>
+                  <li class="bullet-list--item">– Big Data Cloud Engineer</li>
+                  <li class="bullet-list--item">– Big Data Software Engineer</li>
+                </ul>
+                <div class="more-btn-box">
+                  <a href="https://hh.ru/employer/3255653#vacancy-list" target="_blank" class="button">More careers</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-container">
+          <div class="logo-box">
+            <img src="./assets/images/synechron-logo.png" alt="">
+          </div>
+          <a href="https://www.synechron.com/" target="_blank" class="plain-text--sans">www.synechron.com</a>
+      </div>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+  <script src="./js/index.js"></script>
+
+</body>
+</html>
