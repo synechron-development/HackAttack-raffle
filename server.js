@@ -20,8 +20,8 @@
           port: 465,
           secure: true,
           auth: {
-            user: 'geraldjtorres@gmail.com',
-            pass: '69E5d9e4'
+            user: 'hackattack.synechron@gmail.com',
+            pass: 'synechron123'
           }
       });
 
