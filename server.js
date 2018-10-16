@@ -36,9 +36,9 @@
         htmlSnippet += '<p>Candidates level of experience: ' + req.body.experience + '</p>';
 
       let mailOptions = {
-          from: '"HackAttack Synechron" <xx@gmail.com>', // sender address
+          from: '"HackAttack Raffle Synechron" <xx@gmail.com>', // sender address
           to: "gerald.torres@synechron.com", // list of receivers
-          subject: "HackAttack Task Applicant", // Subject line
+          subject: "HackAttack Raffle Applicant", // Subject line
           html: htmlSnippet  // html body
       };
 

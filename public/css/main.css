@@ -311,9 +311,8 @@ a:hover {
 
 @media (min-width: 991px) {
   #hack-attack-page .container .welcome-container .form-container {
-    width: 326px;
+    width: 718px;
     height: auto;
-    position: absolute;
     right: 0;
     top: 110px;
     z-index: 10; }
