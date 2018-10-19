@@ -25,20 +25,19 @@
           }
       });
 
-      console.log("body " + req.body);
-      console.log("answer " + req.body.answer);
+      // console.log("body " + req.body);
+      // console.log("answer " + req.body.answer);
 
-      let htmlSnippet = '<p>Candidates answer: ' +  req.body.answer + '</p>';
-        htmlSnippet += '<p>Candidates full name: ' +  req.body.fullname + '</p>';
+      let htmlSnippet = '<p>Candidates full name: ' +  req.body.fullname + '</p>';
         htmlSnippet += '<p>Candidates email: ' + req.body.email + '</p>';
         htmlSnippet += '<p>Candidates phone number: ' + req.body.phoneNumber + '</p>'
         htmlSnippet += '<p>Candidates tech stack: ' + req.body.techStack + '</p>'
         htmlSnippet += '<p>Candidates level of experience: ' + req.body.experience + '</p>';
 
       let mailOptions = {
-          from: '"HackAttack Raffle Synechron" <xx@gmail.com>', // sender address
-          to: "gerald.torres@synechron.com", // list of receivers
-          subject: "HackAttack Raffle Applicant", // Subject line
+          from: '"Raffle Draw Synechron" <xx@gmail.com>', // sender address
+          to: "global.careers@synechron.com", // list of receivers
+          subject: "Raffle Draw Applicant", // Subject line
           html: htmlSnippet  // html body
       };
 

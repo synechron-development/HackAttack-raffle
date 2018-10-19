@@ -18,7 +18,6 @@ $('#AplicantForm').validator().on('submit', function (e) {
         var form_data = document.applicantForm;
 
         var json_obj = {
-          answer: form_data.answer.value,
           fullname: form_data.fullname.value,
           email: form_data.email.value,
           phoneNumber: form_data.phoneNumber.value,
